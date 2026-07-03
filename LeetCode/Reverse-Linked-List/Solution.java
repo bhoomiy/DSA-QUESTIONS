@@ -13,7 +13,7 @@
 13        if (head==null || head.next==null){
 14            return head;
 15        }
-16
+16    /*
 17        ListNode prevNode=null;
 18        ListNode currNode=head;
 19        while(currNode!=null){
@@ -25,5 +25,11 @@
 25            currNode=nextNode;
 26        }
 27        return prevNode;
-28    }
-29}
+28    */
+29
+30    ListNode newHead=reverseList(head.next);
+31    head.next.next=head;
+32    head.next=null;
+33    return newHead;
+34    }
+35}
